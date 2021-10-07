@@ -33,14 +33,14 @@ Jadro <- function(M, r, s){
 }
 
 
-cokolada <- function(M, r, s){
+Cokolada <- function(M, r, s){
   if(r == dim(M)[1]){
     return(M[r,s])
   }else{
     C <- M[r,s]
-    Cdolu <- cokolada(M, r+1,s)
-    Csikmo <- cokolada(M, r+1, s+1)
-    M[r+1, s] <- max(Cdolu, Csikmo) + C
+    Cdolu <- Cokolada(M, r+1,s)
+    Csikmo <- Cokolada(M, r+1, s+1)
+    return(max(Cdolu, Csikmo) + C)
   }
 }
 
