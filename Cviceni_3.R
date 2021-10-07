@@ -58,3 +58,18 @@ CokoIter <- function(M){
   }
   return(M[1,1])
 }
+
+
+
+#Ukol 3 - Hanojska vez
+
+Hanojska <- function(n, zKolik, naKolik){
+  if (n==1){
+    print(paste('Presun disk z koliku',zKolik,'na kolik', naKolik))
+  }else{
+    volny <- 6 - zKolik - naKolik
+    Hanojska(n-1,zKolik, volny)
+    print(paste('Presun disk z koliku',zKolik,'na kolik', naKolik))
+    Hanojska(n-1,volny, naKolik)
+  }
+}
